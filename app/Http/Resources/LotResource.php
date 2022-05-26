@@ -14,6 +14,12 @@ class LotResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'belongings' => new BelongingsResource($this->whenLoaded('belongings')),
+            'bets' => new BetResource($this->whenLoaded('bets')),
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+        ];
     }
 }

@@ -14,6 +14,11 @@ class BetResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'belongings' => new BelongingsResource($this->whenLoaded('belongings')),
+            'count' => $this->count,
+            'status' => $this->status,
+        ];
     }
 }

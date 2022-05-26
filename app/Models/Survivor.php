@@ -17,7 +17,7 @@ class Survivor extends Model
 
     protected $guarded = [];
 
-    public function belongsgings()
+    public function belongings()
     {
         return $this->hasMany(Belongings::class);
     }
