@@ -17,7 +17,7 @@ class SurvivorController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        return SurvivorResource::collection(Survivor::all());
+        return SurvivorResource::collection(Survivor::with('belongings.item')->paginate(20));
     }
 
     /**

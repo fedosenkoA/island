@@ -36,4 +36,12 @@ class Belongings extends Model
     {
         return $this->belongsTo(Item::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function lots()
+    {
+        return $this->hasMany(Lot::class);
+    }
 }

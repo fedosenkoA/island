@@ -16,13 +16,22 @@ class Survivor extends Model
      */
     protected $table = 'survivors';
 
+    /**
+     * @var array
+     */
     protected $guarded = [];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function belongings()
     {
         return $this->hasMany(Belongings::class);
     }
 
+    /**
+     * @return void
+     */
     protected static function booted()
     {
         static::created(static function (self $survivor) {
