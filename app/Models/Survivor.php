@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Services\Generators\BelongingsGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Survivor extends Model
 {
@@ -27,6 +28,14 @@ class Survivor extends Model
     public function belongings()
     {
         return $this->hasMany(Belongings::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function lots(): BelongsTo
+    {
+        return $this->belongsTo(Lot::class);
     }
 
     /**

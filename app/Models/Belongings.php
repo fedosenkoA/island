@@ -44,4 +44,12 @@ class Belongings extends Model
     {
         return $this->hasMany(Lot::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function bets()
+    {
+        return $this->hasMany(Bet::class);
+    }
 }
