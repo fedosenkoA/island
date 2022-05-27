@@ -6,7 +6,12 @@ use App\Models\Item;
 
 class BelongingsGenerator
 {
-
+    /**
+     *
+     * Generating a set of items
+     *
+     * @return array
+     */
     public function randomItems(): array
     {
         $rand = rand(3, 20);

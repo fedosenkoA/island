@@ -25,7 +25,7 @@ class LotRequest extends FormRequest
     {
         return [
             'belongings_id' => 'required|integer|exists:belongings,id',
-            'bets_id' => 'required|integer|exists:bets,id'
+//            'bets_id' => 'required|integer|exists:bets,id'
         ];
     }
 }

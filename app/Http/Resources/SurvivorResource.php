@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Survivor;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class SurvivorResource extends JsonResource
@@ -18,6 +19,7 @@ class SurvivorResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'belongings' => BelongingsResource::collection($this->whenLoaded('belongings')),
         ];
     }
 }
