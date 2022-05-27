@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Item;
 use Illuminate\Database\Seeder;
 
 class ItemSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -14,6 +15,6 @@ class ItemSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Item::factory(10)->create();
     }
 }

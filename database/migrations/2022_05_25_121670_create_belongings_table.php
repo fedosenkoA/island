@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('survivor_id')->constrained()->cascadeOnDelete();
             $table->foreignId('item_id')->constrained()->cascadeOnDelete();
             $table->integer('count');
+            $table->timestamps();
         });
     }
 

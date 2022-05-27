@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory<Survivor>
  */
-class SurvivorFactory extends Factory
+class ItemFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,8 @@ class SurvivorFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->words(2, true),
+            'relevance' => rand(1, 10)
         ];
     }
 }

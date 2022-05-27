@@ -10,13 +10,9 @@ class Item extends Model
 {
     use HasFactory;
 
-    /**
-     *
-     * @var string
-     */
-    protected $table = 'items';
-
     protected $guarded = [];
+
+    public $timestamps = false;
 
     /**
      * @return HasMany
